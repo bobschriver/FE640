@@ -1,4 +1,5 @@
 import math
+import numpy as np
 
 class SSE():
     def __init__(self, target):
@@ -13,4 +14,10 @@ class SSE():
 
 class MinMax():
     def calculate(self, solution):
-       return max(solution.harvests, key=lambda harvest: harvest.volume).volume 
+        harvest_volumes = [harvest.volume for harvest in solution.harvests]
+        return max(harvest_volumes)
+       
+class Variance():
+    def calculate(self, solution):
+        harvest_volumes = [harvest.volume for harvest in solution.harvests]
+        return np.var(harvest_volumes)
