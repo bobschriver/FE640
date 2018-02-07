@@ -1,0 +1,14 @@
+{
+    "cost": {
+        "cost_function": "minmax",
+        "parameters": {
+        }
+    },
+    "objective": {
+        "objective_function": "tabu_search",
+        "parameters": {
+            "short_term_size": 10,
+            "max_iterations": 1000
+        }
+    }
+}

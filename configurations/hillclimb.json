@@ -1,0 +1,13 @@
+{
+    "cost": {
+        "cost_function": "sse",
+        "parameters": {
+            "target": 200
+        }
+    },
+    "objective": {
+        "objective_function": "hillclimb",
+        "parameters": {
+        }
+    }
+}

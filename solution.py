@@ -19,25 +19,19 @@ class Solution:
             self.harvests[i] = Harvest(i)
             self.harvests[i].from_harvest(harvest)
     
-    def generate_neighbor(self):
-        neighbor_solution = Solution(self.num_harvests)
-        neighbor_solution.from_solution(self)
-        
-        first_harvest = random.choice(neighbor_solution.harvests)
-        while(len(first_harvest.plots) == 0):
-            first_harvest = random.choice(neighbor_solution.harvests)
-    
-        swap_plot = first_harvest.remove_random_plot()
-    
-        second_harvest = random.choice(neighbor_solution.harvests)
-        while(second_harvest == first_harvest):
-            second_harvest = random.choice(neighbor_solution.harvests)
-        
-        second_harvest.add_plot(swap_plot)
-        return neighbor_solution
-    
     def __str__(self):
         return str(self.harvests)
     
     def __repr__(self):
         return str(self)
+        
+    def __eq__(self, other):
+        for harvest, other_harvest in zip(self.harvests, other.harvests):
+            if harvest != other_harvest:
+                return False
+                
+        return True
+        
+    def __ne__(self, other):
+        return not self.__eq__(other)
+        

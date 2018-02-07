@@ -1,0 +1,15 @@
+{
+    "cost": {
+        "cost_function": "minmax",
+        "parameters": {
+        }
+    },
+    "objective": {
+        "objective_function": "great_evaporation",
+        "parameters": {
+            "evaporate": 0.1,
+            "water_level": 100000,
+            "max_iterations": 1000000
+        }
+    }
+}

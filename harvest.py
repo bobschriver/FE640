@@ -4,17 +4,17 @@ import math
 class Harvest:
     def __init__(self, number):
         self.number = number
-        self.plots = []
+        self.plots = set()
         self.volume = 0
         self.growth_modifier = math.pow((1 + 0.3), self.number)
     
     def from_harvest(self, harvest):
         self.number = harvest.number
-        self.plots = list(harvest.plots)
+        self.plots = set(harvest.plots)
         self.volume = harvest.volume
     
     def add_plot(self, plot):
-        self.plots.append(plot)
+        self.plots.add(plot)
         self.volume += plot.volume * self.growth_modifier
     
     def remove_plot(self, plot):
@@ -22,8 +22,8 @@ class Harvest:
         self.volume -= plot.volume * self.growth_modifier
     
     def remove_random_plot(self):
-        random_plot = random.choice(self.plots)
-        self.remove_plot(random_plot)
+        random_plot = self.plots.pop()
+        self.volume -= random_plot.volume * self.growth_modifier
         return random_plot
              
     def __str__(self):
@@ -31,3 +31,10 @@ class Harvest:
     
     def __repr__(self):
         return str(self)
+        
+    def __eq__(self, other):
+        return self.plots == other.plots
+    
+    def __ne__(self, other):
+        return not self.__eq__(other)
+        

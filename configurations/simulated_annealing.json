@@ -1,0 +1,16 @@
+{
+    "cost": {
+        "cost_function": "minmax",
+        "parameters": {
+        }
+    },
+    "objective": {
+        "objective_function": "simulated_annealing",
+        "parameters": {
+            "temperature": 1.0,
+            "min_temperature": 0.0001,
+            "alpha": 0.99,
+            "repetitions": 1000
+        }
+    }
+}

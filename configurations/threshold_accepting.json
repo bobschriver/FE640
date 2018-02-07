@@ -1,0 +1,16 @@
+{
+    "cost": {
+        "cost_function": "minmax",
+        "parameters": {
+        }
+    },
+    "objective": {
+        "objective_function": "threshold_accepting",
+        "parameters": {
+            "threshold": 0.03,
+            "min_threshold": -0.03,
+            "threshold_step": 0.0001,
+            "repetitions": 1000
+        }
+    }
+}

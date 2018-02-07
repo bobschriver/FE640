@@ -1,0 +1,14 @@
+{
+    "cost": {
+        "cost_function": "variance",
+        "parameters": {
+        }
+    },
+    "objective": {
+        "objective_function": "record_to_record",
+        "parameters": {
+            "deviation": 10.0,
+            "max_iterations": 1000000
+        }
+    }
+}

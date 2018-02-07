@@ -1,8 +1,12 @@
 import math
 import numpy as np
 
-class SSE():
-    def __init__(self, target):
+class Cost():
+    def configure(self):
+        return
+
+class SSE(Cost):
+    def configure(self, target):
         self.target = target
         
     def calculate(self, solution):
@@ -12,12 +16,12 @@ class SSE():
         
         return sse
 
-class MinMax():
+class MinMax(Cost):
     def calculate(self, solution):
         harvest_volumes = [harvest.volume for harvest in solution.harvests]
         return max(harvest_volumes)
        
-class Variance():
+class Variance(Cost):
     def calculate(self, solution):
         harvest_volumes = [harvest.volume for harvest in solution.harvests]
         return np.var(harvest_volumes)
